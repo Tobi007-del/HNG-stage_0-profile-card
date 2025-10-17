@@ -1,0 +1,241 @@
+:root {
+  --brand-color: #ed8f23;
+  --brand-accent-color: #eb9634;
+  --current-theme-sub-color: white;
+  --current-theme-fade-color: whitesmoke;
+  --border-color: rgba(255, 255, 255, 0.25);
+  --lighter-black: rgb(20, 20, 20);
+  --darker-black: rgb(15, 15, 15);
+  --main-text-color: lightgrey;
+  --sub-text-color: grey;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline-color: var(--sub-text-color);
+  outline-style: dashed;
+  outline-offset: 0.1rem;
+  outline-width: 0;
+}
+
+*:focus-visible {
+  outline-width: 0.15rem;
+  transition: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.001rem;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+img {
+  color: transparent;
+  min-width: 100%;
+  min-height: 100%;
+  background: var(--darker-black);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--darker-black);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: var(--current-theme-fade-color);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 2.5rem;
+  padding-inline: 2dvw;
+}
+
+.profile-card {
+  min-width: 0;
+  background: var(--lighter-black);
+  border: 0.05rem solid var(--border-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.profile-top-wrapper,
+.profile-bottom-wrapper,
+.profile-extra-wrapper {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: fit-content;
+  gap: 4rem;
+}
+
+.profile-image-wrapper {
+  flex: 0 0 12.5rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.profile-avatar {
+  min-width: 0;
+  position: relative;
+  width: 12.5rem;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  border-radius: 50%;
+  border: 0.05rem solid var(--border-color);
+}
+
+.profile-avatar img {
+  border-radius: inherit;
+}
+
+.profile-camera-icon {
+  position: absolute;
+  bottom: 0.9rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lighter-black);
+  border-top: 0.05rem solid var(--border-color);
+  border-left: 0.05rem solid var(--border-color);
+  border-top-left-radius: 1rem;
+}
+
+.profile-camera-icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.profile-header,
+.profile-header > div {
+  min-width: 0;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-header > div {
+  gap: 0;
+}
+
+h3 {
+  position: relative;
+  color: var(--sub-text-color);
+  font-size: 1.05rem;
+  margin-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+h3::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 0.5rem);
+  transform: translateY(-50%);
+  width: 0.35rem;
+  height: 1.25rem;
+  margin-right: 0.25rem;
+  background-color: var(--brand-accent-color);
+  border-radius: 0.2rem;
+}
+
+.profile-header h2 {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--current-theme-sub-color);
+}
+
+.profile-info-wrapper {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.profile-header p {
+  min-width: 15rem;
+  color: var(--main-text-color);
+  font-size: 0.95rem;
+  min-width: 0;
+}
+
+.profile-social ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  list-style-type: none;
+}
+
+.profile-social a {
+  flex: 0 1 16rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 1rem;
+  background-color: rgb(50, 50, 50);
+  border: 0.05rem solid var(--border-color);
+  text-align: center;
+}
+
+.profile-social a span:first-child {
+  position: relative;
+  color: var(--brand-color);
+}
+
+.profile-social a span:first-child svg {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.profile-social a p {
+  font-size: 1.1rem;
+  color: var(--brand-accent-color);
+}
+
+.profile-meta {
+  width: 12.5rem;
+}
+
+.profile-meta p {
+  color: var(--sub-text-color);
+}
+
+.profile-meta time {
+  color: var(--current-theme-fade-color);
+  font-weight: 600;
+}
+
+.profile-extra-wrapper ul li {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--current-theme-fade-color);
+  margin-left: 1rem;
+  font-style: italic;
+}
