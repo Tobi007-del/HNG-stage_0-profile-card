@@ -232,6 +232,11 @@ h3::before {
   font-weight: 600;
 }
 
+.profile-bottom-wrapper,
+.profile-extra-wrapper {
+  row-gap: 1.75rem;
+}
+
 .profile-extra-wrapper ul li {
   font-size: 0.9rem;
   font-weight: 600;
